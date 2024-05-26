@@ -1,7 +1,44 @@
-const getDate = new Date();
-const getYear = getDate.getFullYear()
-const getMonth = getDate.getMonth()+1
-const getDay = getDate.getDate()
+let getDate = new Date();
+let getYear = getDate.getFullYear()
+let getMonth = getDate.getMonth()+1
+let getDay = getDate.getDate()
+
+setInterval(waktu)
+function waktu() {
+    let date = new Date();
+    let jam = date.getHours();
+    let menit = date.getMinutes();
+    let detik = date.getSeconds();
+
+    function jamm() {
+        if(jam < 10) {
+            jamm = `0${jam}`
+        } else {
+            jamm = jam;
+        }
+        return jamm;
+    }
+    function menitt() {
+        if(menit < 10) {
+            menitt = `0${menit}`
+        } else {
+            menitt = menit;
+        }
+        return menitt;
+    }
+    function detikk() {
+        if(detik < 10) {
+            detikk = `0${detik}`
+        } else {
+            detikk = detik;
+        }
+        return detikk;
+    }
+    jamL = `${jamm()}:${menitt()}:${detikk()}`
+    document.querySelector('.waktu').textContent = jamL;
+}
+waktu();
+
 
 function bulan() {
     if(getMonth < 10) {
